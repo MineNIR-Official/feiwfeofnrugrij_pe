@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Градиент Minecraft</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="gradient-container"></div>
+    <script src="script.js"></script>
+
+<style>
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #4a7c59;
+}
+
+#gradient-container {
+    display: grid;
+    grid-template-columns: repeat(10, 50px); /* 10 колонок по 50 пикселей */
+    grid-template-rows: repeat(10, 50px); /* 10 строк по 50 пикселей */
+}
+
+.block {
+    width: 50px;
+    height: 50px;
+}
+</style>
+
+<script>
+// Создаём массив цветов, имитирующих блоки из Minecraft
+const colors = [
+    '#A0522D', // Блок дерева
+    '#D2691E', // Блок дерева (темное)
+    '#8B4513', // Блок земли
+    '#FFD700', // Блок золота
+    '#C0C0C0', // Блок серебра
+    '#7CFC00', // Блок травы
+    '#4682B4', // Блок воды
+    '#FF6347', // Блок камня
+    '#D3D3D3', // Блок кремния
+    '#FF4500'  // Блок магмы
+];
+
+const container = document.getElementById('gradient-container');
+
+// Генерируем блоки с случайными цветами
+for (let i = 0; i < 100; i++) { // 10x10 = 100 блоков
+    const block = document.createElement('div');
+    block.className = 'block';
+    block.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+    container.appendChild(block);
+}
+</script>
+
+ 
+</body>
+</html>
